@@ -391,6 +391,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 		Matrix4x4 viewportMatrix = MakeViewportMatrix(0, 0, float(kWindowWidth), float(kWindowHeight), 0.0f, 1.0f);
 
+#ifdef _DEBUG
+
 		ImGui::Begin("camera");
 		ImGui::DragFloat3("scale", &cameraScale.x, 0.01f);
 		ImGui::DragFloat3("position", &cameraPosition.x, 0.01f);
@@ -403,6 +405,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 		ImGui::DragFloat3("translate", &sphereTranslate.x, 0.01f);
 		ImGui::DragFloat("radius", &sphere.radius, 0.01f);
 		ImGui::End();
+
+#endif // _DEBUG
 
 		///
 		/// ↑更新処理ここまで
